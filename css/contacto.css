@@ -1,0 +1,50 @@
+body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #fffef5;
+            color: #207a26;
+        }
+
+        .navbar {
+            background-color: #38f01742;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #f1f1a1 !important;
+            font-size: 1.6rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: #207a26;
+            font-weight: 500;
+            margin-left: 15px;
+        }
+
+        .nav-link.active {
+            color: white !important;
+            text-decoration: underline;
+        }
+
+        .form-control {
+            border: 2px solid #2e8837;
+            border-radius: 8px;
+        }
+
+        .btn-success {
+            background-color: #2e8837;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+        }
+
+        .btn-success:hover {
+            background-color: #256e2c;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #207a26;
+            font-size: 0.9rem;
+        }
