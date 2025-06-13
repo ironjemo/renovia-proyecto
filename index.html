@@ -10,17 +10,14 @@
 </head>
 
 <body>
-  <!-- HEADER -->
   <header>
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="#">
           <img src="img/logonav.png" alt="Logo Renovía" height="50px" class="me-2">
-          Renovía
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-          aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -44,10 +41,9 @@
     </nav>
   </header>
 
-  <!-- MAIN -->
   <main class="container text-center py-5">
 
-    <!-- Carousel -->
+    <!-- Carrusel -->
     <div class="container-fluid p-4">
       <div class="row">
         <div class="col">
@@ -55,14 +51,23 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <h1 class="hero-title">Visualizando el Futuro Renovable</h1>
-                <p class="lead p-4">Esta plataforma permite visualizar datos históricos de consumo y producción de energías renovables como solar, eólica, hidroeléctrica y geotérmica desde 1965 hasta 2022.</p>
+                <p class="lead p-4">Esta plataforma permite visualizar datos históricos de consumo y
+                  producción de energías renovables como solar, eólica, hidroeléctrica y geotérmica
+                  desde 1965 hasta 2022.</p>
                 <img src="img/logo1.png" alt="Ícono Energía Renovable" class="img-fluid mt-4" width="120" />
               </div>
               <div class="carousel-item">
-                <img src="img/carrusel2.jpg" class="d-block w-100" alt="Carrusel 2">
+                <h1 class="hero-title">Reducción de Emisiones</h1>
+                <p class="lead p-4 text-center">La energía limpia contribuye a un aire más puro y a
+                  mitigar el cambio
+                  climático.</p>
+                <img src="img/carousel2.jpg" alt="Impacto Energía Renovable" class="img-fluid mt-4" width="232" />
               </div>
               <div class="carousel-item">
-                <img src="img/carrusel3.jpg" class="d-block w-100" alt="Carrusel 3">
+                <h1 class="hero-title">Un Futuro Sostenible</h1>
+                <p class="lead p-4 text-center">La innovación energética impulsa comunidades resilientes
+                  y verdes.</p>
+                <img src="img/carrusel3.png" alt="Impacto Energía Renovable" class="img-fluid mt-4" width="232" />
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
@@ -79,56 +84,102 @@
         </div>
       </div>
     </div>
+    <!-- Fin Carrusel -->
 
+    <!-- Sección Transición Energética -->
+    <section class="text-start my-5">
+      <h2 class="text-center mb-4">Transición Energética Justa</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Objetivo</h4>
+          <p>Ofrecer una visión comprensiva y práctica que respalde la transición hacia un futuro energético
+            más sostenible y justo mediante un aplicativo web que exhiba características de usabilidad.</p>
+        </div>
+        <div class="col-md-6">
+          <h4>Descripción del Proyecto</h4>
+          <p>Este proyecto se centra en un amplio conjunto de datos globales sobre energía renovable que cubre
+            el periodo de 1965 a 2022. Incluye producción de energía hidroeléctrica, eólica, solar, de
+            biocombustibles y geotérmica.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Fin Sección Transición Energética -->
+   
     <!-- Cards -->
     <section class="container p-4">
       <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
-          <div class="card h-100">
-            <img src="img/solar.jpg" class="card-img-top" alt="Energía Solar">
+          <div class="card h-100 shadow-sm">
+            <img src="img/energiaSolar.png" class="card-img-top" alt="Energía Solar">
             <div class="card-body">
               <h5 class="card-title">Energía Solar</h5>
-              <p class="card-text">Captura la energía del sol a través de paneles fotovoltaicos y es una fuente limpia, abundante y silenciosa.</p>
+              <p class="card-text">Captura la energía del sol a través de paneles fotovoltaicos. <a
+                  href="solar.html">Ver más</a></p>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
-            <img src="img/eolica.jpg" class="card-img-top" alt="Energía Eólica">
+          <div class="card h-100 shadow-sm">
+            <img src="img/energiaEolica.png" class="card-img-top" alt="Energía Eólica">
             <div class="card-body">
               <h5 class="card-title">Energía Eólica</h5>
-              <p class="card-text">Utiliza la fuerza del viento mediante aerogeneradores. Es limpia y adecuada para zonas rurales y costeras.</p>
+              <p class="card-text">Utiliza el viento para generar electricidad. <a href="eolica.html">Ver
+                  más</a></p>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
-            <img src="img/hidro.jpg" class="card-img-top" alt="Energía Hidroeléctrica">
+          <div class="card h-100 shadow-sm">
+            <img src="img/energiaHidro.png" class="card-img-top" alt="Energía Hidroeléctrica">
             <div class="card-body">
               <h5 class="card-title">Energía Hidroeléctrica</h5>
-              <p class="card-text">Genera electricidad a partir del movimiento del agua en ríos y represas. Es estable y eficiente.</p>
+              <p class="card-text">Aprovecha el movimiento del agua. <a href="hidro.html">Ver más</a></p>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
-            <img src="img/geotermica.jpg" class="card-img-top" alt="Energía Geotérmica">
+          <div class="card h-100 shadow-sm">
+            <img src="img/energiaGeoterm.png" class="card-img-top" alt="Energía Geotérmica">
             <div class="card-body">
               <h5 class="card-title">Energía Geotérmica</h5>
-              <p class="card-text">Aprovecha el calor interno de la Tierra. Ideal para calefacción y generación de energía continua.</p>
+              <p class="card-text">Emplea el calor interno de la Tierra. <a href="geotermica.html">Ver
+                  más</a></p>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- Fin Cards -->
+    
+    <!-- Enlaces útiles -->
+    <section class="container text-center my-5">
+      <h3>Explora y Calcula</h3>
+      <p>Visualiza los datos históricos o estima tu porcentaje de energía renovable.</p>
+      <a href="graficos.html" class="btn btn-outline-success m-2">Ir al Dashboard</a>
+      <a href="calculadora.html" class="btn btn-outline-primary m-2">Ir a la Calculadora</a>
+    </section>
+    <!-- Fin Enlaces útiles -->
   </main>
 
   <!-- FOOTER -->
   <footer class="text-center py-3">
     <p class="mb-0">© 2024 Renovía</p>
   </footer>
+  <!-- Fin FOOTER -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+<script>
+  // Saludo automatico dependiendo la hora del día
+  window.addEventListener('DOMContentLoaded', () => {
+    const hour = new Date().getHours();
+    let saludo = "¡Bienvenido!";
+    if (hour < 12) saludo = "¡Buenos días!";
+    else if (hour < 18) saludo = "¡Buenas tardes!";
+    else saludo = "¡Buenas noches!";
+    document.querySelector(".hero-title").textContent = saludo + " Visualizando el Futuro Renovable";
+  });
+</script>
 
 </html>
