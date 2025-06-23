@@ -55,9 +55,11 @@
           </li>
           <!-- funcionalidad para regresar a inicio desde la pestaña Home siguientes 3 lineas-->
           <li class="nav-item d-none d-md-block">
-            <a href="/renovia-proyecto/index.html" class="nav-link">Home <i class="bi bi-house-door-fill"></i></a>
+            <a href="/index.html" class="nav-link">Home <i class="bi bi-house-door-fill"></i></a>
           </li>
-          <li class="nav-item d-none d-md-block"><a href="/renovia-proyecto/contacto.html" class="nav-link">Contact</a></li>
+          <li class="nav-item d-none d-md-block">
+            <a href="/contacto.html" class="nav-link">Contact</a>
+          </li>
         </ul>
         <!--end::Start Navbar Links-->
         <!--begin::End Navbar Links-->
@@ -76,77 +78,126 @@
               <span class="navbar-badge badge text-bg-danger">3</span>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-              <a href="#" class="dropdown-item">
-                <!--begin::Message-->
+
+              <!-- Jero -->
+              <a href="#" class="dropdown-item" onclick="activarChatBot('Jero')">
                 <div class="d-flex">
                   <div class="flex-shrink-0">
-                    <img src="../../dist/assets/img/user1-128x128.jpg" alt="User Avatar"
-                      class="img-size-50 rounded-circle me-3" />
+                    <img
+                      src="https://img.freepik.com/vector-gratis/joven-camisa-negra_1308-173618.jpg?semt=ais_hybrid&w=740"
+                      alt="Avatar Jero" class="img-size-50 rounded-circle me-3" />
                   </div>
                   <div class="flex-grow-1">
                     <h3 class="dropdown-item-title">
-                      Brad Diesel
+                      Jero
                       <span class="float-end fs-7 text-danger"><i class="bi bi-star-fill"></i></span>
                     </h3>
-                    <p class="fs-7">Call me whenever you can...</p>
-                    <p class="fs-7 text-secondary">
-                      <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
-                    </p>
+                    <p class="fs-7">¿Tienes dudas?</p>
+                    <p class="fs-7 text-secondary"><i class="bi bi-clock-fill me-1"></i> Hace 2 horas</p>
                   </div>
                 </div>
-                <!--end::Message-->
               </a>
+
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <!--begin::Message-->
+
+              <!-- Herson -->
+              <a href="#" class="dropdown-item" onclick="activarChatBot('Herson')">
                 <div class="d-flex">
                   <div class="flex-shrink-0">
-                    <img src="../../dist/assets/img/user8-128x128.jpg" alt="User Avatar"
-                      class="img-size-50 rounded-circle me-3" />
+                    <img
+                      src="https://img.freepik.com/vector-gratis/joven-gafas-capucha_1308-174658.jpg?semt=ais_hybrid&w=740"
+                      alt="Avatar Herson" class="img-size-50 rounded-circle me-3" />
                   </div>
                   <div class="flex-grow-1">
                     <h3 class="dropdown-item-title">
-                      John Pierce
-                      <span class="float-end fs-7 text-secondary">
-                        <i class="bi bi-star-fill"></i>
-                      </span>
+                      Herson
+                      <span class="float-end fs-7 text-warning"><i class="bi bi-star-fill"></i></span>
                     </h3>
-                    <p class="fs-7">I got your message bro</p>
-                    <p class="fs-7 text-secondary">
-                      <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
-                    </p>
+                    <p class="fs-7">¿Tienes dudas sobre el menú de inicio?</p>
+                    <p class="fs-7 text-secondary"><i class="bi bi-clock-fill me-1"></i> Hace 1 hora</p>
                   </div>
                 </div>
-                <!--end::Message-->
               </a>
+
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <!--begin::Message-->
+
+              <!-- Santiago -->
+              <a href="#" class="dropdown-item" onclick="activarChatBot('Santiago')">
                 <div class="d-flex">
                   <div class="flex-shrink-0">
-                    <img src="../../dist/assets/img/user3-128x128.jpg" alt="User Avatar"
-                      class="img-size-50 rounded-circle me-3" />
+                    <img
+                      src="https://img.freepik.com/vector-gratis/nino-sonriente-cabello-rizado_1308-175758.jpg?semt=ais_hybrid&w=740"
+                      alt="Avatar Santiago" class="img-size-50 rounded-circle me-3" />
                   </div>
                   <div class="flex-grow-1">
                     <h3 class="dropdown-item-title">
-                      Nora Silvester
-                      <span class="float-end fs-7 text-warning">
-                        <i class="bi bi-star-fill"></i>
-                      </span>
+                      Santiago
+                      <span class="float-end fs-7 text-info"><i class="bi bi-star-fill"></i></span>
                     </h3>
-                    <p class="fs-7">The subject goes here</p>
-                    <p class="fs-7 text-secondary">
-                      <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
-                    </p>
+                    <p class="fs-7">¿Quieres entender los dashboards?</p>
+                    <p class="fs-7 text-secondary"><i class="bi bi-clock-fill me-1"></i> Hace 5 minutos</p>
                   </div>
                 </div>
-                <!--end::Message-->
               </a>
+
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+              <a href="#" class="dropdown-item dropdown-footer">Ver todos los mensajes</a>
             </div>
           </li>
           <!--end::Messages Dropdown Menu-->
+
+
+          <!-- Chatbot Modal (simulado) -->
+          <div class="modal fade" id="chatbotModal" tabindex="-1" aria-labelledby="chatbotModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="chatbotModalLabel">Asistente Virtual</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="chatbotBody">
+                  <!-- Aquí se inserta el contenido dinámico del chat -->
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- JavaScript para chatbot -->
+          <script>
+            function launchChatbot(user) {
+              const preguntas = {
+                'Jero': [
+                  "¿Quieres saber cómo funcionan los gráficos?",
+                  "¿Deseas comparar producción energética?",
+                  "¿Quieres ver reportes mensuales?"
+                ],
+                'Herson': [
+                  "¿Te gustaría entender las opciones del dashboard?",
+                  "¿Necesitas ayuda con los menús laterales?",
+                  "¿Deseas exportar datos?"
+                ],
+                'Santiago': [
+                  "¿Buscas personalizar la plantilla?",
+                  "¿Quieres saber cómo agregar nuevas páginas?",
+                  "¿Necesitas integrar bases de datos?"
+                ]
+              };
+
+              const chatbotBody = document.getElementById("chatbotBody");
+              chatbotBody.innerHTML = `<strong>Hola, soy ${user} 🤖</strong><br><br>`;
+              preguntas[user].forEach(pregunta => {
+                chatbotBody.innerHTML += `<p class="text-muted">👉 ${pregunta}</p>`;
+              });
+
+              const modal = new bootstrap.Modal(document.getElementById("chatbotModal"));
+              modal.show();
+            }
+          </script>
+
           <!--begin::Notifications Dropdown Menu-->
           <li class="nav-item dropdown">
             <a class="nav-link" data-bs-toggle="dropdown" href="#">
@@ -679,7 +730,7 @@
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-end">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
               </ol>
             </div>
@@ -689,393 +740,394 @@
         <!--end::Container-->
       </div>
       <!--end::App Content Header-->
-      <!--begin::App Content-->
-      <div class="app-content">
-        <!--begin::Container-->
-        <div class="container-fluid">
-          <!--begin::Row-->
-          <div class="row">
-            <!--begin::Col-->
-            <div class="col-lg-3 col-6">
-              <!--begin::Small Box Widget 1-->
-              
-              <div class="small-box text-bg-warning">
-                <div class="inner">
-                  <h3>8,540</h3>
-                  <p>Produccion Solar (MWh)</p>
-                </div>
-                <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true">
-                  <path
-                     d="M12 4a1 1 0 011-1h0a1 1 0 110 2h0a1 1 0 01-1-1zM4.93 5.34a1 1 0 011.41 0h0a1 1 0 01-1.41 1.41h0a1 1 0 010-1.41zM2 12a1 1 0 011-1h0a1 1 0 110 2h0a1 1 0 01-1-1zM4.93 18.66a1 1 0 010-1.41h0a1 1 0 111.41 1.41h0a1 1 0 01-1.41 0zM12 20a1 1 0 01-1 1h0a1 1 0 110-2h0a1 1 0 011 1zM19.07 18.66a1 1 0 01-1.41 0h0a1 1 0 111.41-1.41h0a1 1 0 010 1.41zM22 12a1 1 0 01-1 1h0a1 1 0 110-2h0a1 1 0 011 1zM19.07 5.34a1 1 0 010 1.41h0a1 1 0 11-1.41-1.41h0a1 1 0 011.41 0zM12 7a5 5 0 100 10 5 5 0 000-10z">
-                    </path>
-                </svg>
-                <a href="#"
-                  class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
-                  More info <i class="bi bi-link-45deg"></i>
-                </a>
-              </div>
-              <!--end::Small Box Widget 1-->
+      <style>
+        .small-box {
+          position: relative;
+          height: 180px;
+          padding: 15px;
+          border-radius: 10px;
+          color: white;
+        }
+
+        .small-box .inner {
+          z-index: 2;
+          position: relative;
+        }
+
+        .small-box .small-box-icon {
+          position: absolute;
+          top: 10px;
+          right: 15px;
+          width: 40px;
+          height: 40px;
+          opacity: 0.8;
+          z-index: 1;
+        }
+
+        .small-box-footer {
+          display: block;
+          background: rgba(0, 0, 0, 0.05);
+          color: #fff;
+          text-align: center;
+          padding: 5px 0;
+          border-radius: 0 0 10px 10px;
+          font-weight: 500;
+        }
+      </style>
+
+      <div class="row">
+        <!-- Solar -->
+        <div class="col-lg-3 col-6">
+          <div class="small-box" style="background-color: #fbc02d;">
+            <div class="inner">
+              <h3>8,540</h3>
+              <p>Producción Solar (MWh)</p>
             </div>
-            <!--end::Col-->
-            <div class="col-lg-3 col-6">
-              <!--begin::Small Box Widget 2-->
-              <div class="small-box text-bg-success">
-                <div class="inner">
-                  <h3>53<sup class="fs-5">%</sup></h3>
-                  <p>Bounce Rate</p>
-                </div>
-                <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true">
-                  <path
-                    d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z">
-                  </path>
-                </svg>
-                <a href="#"
-                  class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
-                  More info <i class="bi bi-link-45deg"></i>
-                </a>
-              </div>
-              <!--end::Small Box Widget 2-->
-            </div>
-            <!--end::Col-->
-            <div class="col-lg-3 col-6">
-              <!--begin::Small Box Widget 3-->
-              <div class="small-box text-bg-warning">
-                <div class="inner">
-                  <h3>44</h3>
-                  <p>User Registrations</p>
-                </div>
-                <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true">
-                  <path
-                    d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z">
-                  </path>
-                </svg>
-                <a href="#" class="small-box-footer link-dark link-underline-opacity-0 link-underline-opacity-50-hover">
-                  More info <i class="bi bi-link-45deg"></i>
-                </a>
-              </div>
-              <!--end::Small Box Widget 3-->
-            </div>
-            <!--end::Col-->
-            <div class="col-lg-3 col-6">
-              <!--begin::Small Box Widget 4-->
-              <div class="small-box text-bg-danger">
-                <div class="inner">
-                  <h3>65</h3>
-                  <p>Unique Visitors</p>
-                </div>
-                <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true">
-                  <path clip-rule="evenodd" fill-rule="evenodd"
-                    d="M2.25 13.5a8.25 8.25 0 018.25-8.25.75.75 0 01.75.75v6.75H18a.75.75 0 01.75.75 8.25 8.25 0 01-16.5 0z">
-                  </path>
-                  <path clip-rule="evenodd" fill-rule="evenodd"
-                    d="M12.75 3a.75.75 0 01.75-.75 8.25 8.25 0 018.25 8.25.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V3z">
-                  </path>
-                </svg>
-                <a href="#"
-                  class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
-                  More info <i class="bi bi-link-45deg"></i>
-                </a>
-              </div>
-              <!--end::Small Box Widget 4-->
-            </div>
-            <!--end::Col-->
+            <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 4a1 1 0 011-1h0a1 1 0 110 2h0a1 1 0 01-1-1zM4.93 5.34a1 1 0 011.41 0h0a1 1 0 01-1.41 1.41h0a1 1 0 010-1.41zM2 12a1 1 0 011-1h0a1 1 0 110 2h0a1 1 0 01-1-1zM4.93 18.66a1 1 0 010-1.41h0a1 1 0 111.41 1.41h0a1 1 0 01-1.41 0zM12 20a1 1 0 01-1 1h0a1 1 0 110-2h0a1 1 0 011 1zM19.07 18.66a1 1 0 01-1.41 0h0a1 1 0 111.41-1.41h0a1 1 0 010 1.41zM22 12a1 1 0 01-1 1h0a1 1 0 110-2h0a1 1 0 011 1zM19.07 5.34a1 1 0 010 1.41h0a1 1 0 11-1.41-1.41h0a1 1 0 011.41 0zM12 7a5 5 0 100 10 5 5 0 000-10z">
+              </path>
+            </svg>
+            <a href="#" class="small-box-footer">Más información <i class="bi bi-link-45deg"></i></a>
           </div>
-          <!--end::Row-->
+        </div>
+
+        <!-- Eólica -->
+        <div class="col-lg-3 col-6">
+          <div class="small-box" style="background-color: #00bcd4;">
+            <div class="inner">
+              <h3>1.82</h3>
+              <p>Producción Eólica (MWh)</p>
+            </div>
+            <svg class="small-box-icon" viewBox="0 0 24 24" fill="white">
+              <path d="M12 2l.7 3.5L17 7l-4 1 1.5 4-2.5-3-2.5 3L11 8 7 7l4.3-1.5L12 2zM11 13h2v9h-2v-9z" />
+            </svg>
+            <a href="#" class="small-box-footer">Más información <i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+
+        <!-- Hidroeléctrica -->
+        <div class="col-lg-3 col-6">
+          <div class="small-box" style="background-color: #1976d2;">
+            <div class="inner">
+              <h3>2.64</h3>
+              <p>Producción Hidroeléctrica (MWh)</p>
+            </div>
+            <svg class="small-box-icon" fill="white" viewBox="0 0 24 24">
+              <path
+                d="M4 3h16v2H4V3zm1 3h14v2H5V6zm1 3h12v1H6V9zm2 2h8v1H8v-1zm2 2h4v1h-4v-1zM5 16s1 1 3 1 3-1 3-1 1 1 3 1 3-1 3-1 1 1 3 1v2c-2 0-3-1-3-1s-1 1-3 1-3-1-3-1-1 1-3 1-3-1-3-1v-2z" />
+            </svg>
+            <a href="#" class="small-box-footer">Más información <i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+
+        <!-- Geotérmica -->
+        <div class="col-lg-3 col-6">
+          <div class="small-box" style="background-color: #fb8c00;">
+            <div class="inner">
+              <h3>0.92</h3>
+              <p>Producción Geotérmica (MWh)</p>
+            </div>
+            <svg class="small-box-icon" fill="white" viewBox="0 0 24 24">
+              <path
+                d="M8 2a1 1 0 011-1h6a1 1 0 010 2h-1v2h2a1 1 0 010 2h-2v2h-2V7H9a1 1 0 010-2h2V3H9a1 1 0 01-1-1zm-3.6 19a1 1 0 01-.9-1.4l3.5-7a1 1 0 01.9-.6h7a1 1 0 01.9.6l3.5 7a1 1 0 01-.9 1.4H4.4z" />
+            </svg>
+            <a href="#" class="small-box-footer">Más información <i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- GRÁFICO 1: Barras de consumo histórico actualizado -->
+
+      <!-- CARD del gráfico con selector de año ajustado -->
+      <div class="card card-success">
+        <div class="card-header d-flex justify-content-between align-items-center flex-wrap">
+          <h3 class="card-title mb-0">Consumo histórico por mes (kWh)</h3>
+          <div class="d-flex align-items-center">
+            <label for="yearSelector" class="mb-0 mr-2"> Año: </label>
+            <select id="yearSelector" class="form-control form-control-sm" onchange="actualizarGraficoPorAno()"
+              style="width: auto;">
+              <!-- Opciones serán cargadas dinámicamente -->
+            </select>
+          </div>
+        </div>
+        <div class="card-body">
+          <canvas id="graficoDashboard" height="120"></canvas>
+        </div>
+      </div>
 
 
 
-          <!-- GRÁFICO 1: Barras de consumo histórico -->
-          <div class="card card-success">
+      <!--begin::Row-->
+      <div class="row">
+        <!-- Start col -->
+        <div class="col-lg-7 connectedSortable">
+          <div class="card mb-4">
             <div class="card-header">
-              <h3 class="card-title">Consumo histórico por año (kWh)</h3>
+              <h3 class="card-title">Sales Value 1965.</h3>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="card-body">
+              <div id="revenue-chart"></div>
+            </div>
+          </div>
+          <!-- /.card -->
+          <!-- DIRECT CHAT -->
+          <div class="card direct-chat direct-chat-primary mb-4">
+            <div class="card-header">
+              <h3 class="card-title">Direct Chat</h3>
+              <div class="card-tools">
+                <span title="3 New Messages" class="badge text-bg-primary"> 3 </span>
+                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
+                  <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
+                  <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
+                </button>
+                <button type="button" class="btn btn-tool" title="Contacts" data-lte-toggle="chat-pane">
+                  <i class="bi bi-chat-text-fill"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-lte-toggle="card-remove">
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <!-- Conversations are loaded here -->
+              <div class="direct-chat-messages">
+                <!-- Message. Default to the start -->
+                <div class="direct-chat-msg">
+                  <div class="direct-chat-infos clearfix">
+                    <span class="direct-chat-name float-start"> Alexander Pierce </span>
+                    <span class="direct-chat-timestamp float-end"> 23 Jan 2:00 pm </span>
+                  </div>
+                  <!-- /.direct-chat-infos -->
+                  <img class="direct-chat-img" src="../../dist/assets/img/user1-128x128.jpg" alt="message user image" />
+                  <!-- /.direct-chat-img -->
+                  <div class="direct-chat-text">
+                    Is this template really for free? That's unbelievable!
+                  </div>
+                  <!-- /.direct-chat-text -->
+                </div>
+                <!-- /.direct-chat-msg -->
+                <!-- Message to the end -->
+                <div class="direct-chat-msg end">
+                  <div class="direct-chat-infos clearfix">
+                    <span class="direct-chat-name float-end"> Sarah Bullock </span>
+                    <span class="direct-chat-timestamp float-start"> 23 Jan 2:05 pm </span>
+                  </div>
+                  <!-- /.direct-chat-infos -->
+                  <img class="direct-chat-img" src="../../dist/assets/img/user3-128x128.jpg" alt="message user image" />
+                  <!-- /.direct-chat-img -->
+                  <div class="direct-chat-text">You better believe it!</div>
+                  <!-- /.direct-chat-text -->
+                </div>
+                <!-- /.direct-chat-msg -->
+                <!-- Message. Default to the start -->
+                <div class="direct-chat-msg">
+                  <div class="direct-chat-infos clearfix">
+                    <span class="direct-chat-name float-start"> Alexander Pierce </span>
+                    <span class="direct-chat-timestamp float-end"> 23 Jan 5:37 pm </span>
+                  </div>
+                  <!-- /.direct-chat-infos -->
+                  <img class="direct-chat-img" src="../../dist/assets/img/user1-128x128.jpg" alt="message user image" />
+                  <!-- /.direct-chat-img -->
+                  <div class="direct-chat-text">
+                    Working with AdminLTE on a great new app! Wanna join?
+                  </div>
+                  <!-- /.direct-chat-text -->
+                </div>
+                <!-- /.direct-chat-msg -->
+                <!-- Message to the end -->
+                <div class="direct-chat-msg end">
+                  <div class="direct-chat-infos clearfix">
+                    <span class="direct-chat-name float-end"> Sarah Bullock </span>
+                    <span class="direct-chat-timestamp float-start"> 23 Jan 6:10 pm </span>
+                  </div>
+                  <!-- /.direct-chat-infos -->
+                  <img class="direct-chat-img" src="../../dist/assets/img/user3-128x128.jpg" alt="message user image" />
+                  <!-- /.direct-chat-img -->
+                  <div class="direct-chat-text">I would love to.</div>
+                  <!-- /.direct-chat-text -->
+                </div>
+                <!-- /.direct-chat-msg -->
+              </div>
+              <!-- /.direct-chat-messages-->
+              <!-- Contacts are loaded here -->
+              <div class="direct-chat-contacts">
+                <ul class="contacts-list">
+                  <li>
+                    <a href="#">
+                      <img class="contacts-list-img" src="../../dist/assets/img/user1-128x128.jpg" alt="User Avatar" />
+                      <div class="contacts-list-info">
+                        <span class="contacts-list-name">
+                          Count Dracula
+                          <small class="contacts-list-date float-end"> 2/28/2023 </small>
+                        </span>
+                        <span class="contacts-list-msg"> How have you been? I was... </span>
+                      </div>
+                      <!-- /.contacts-list-info -->
+                    </a>
+                  </li>
+                  <!-- End Contact Item -->
+                  <li>
+                    <a href="#">
+                      <img class="contacts-list-img" src="../../dist/assets/img/user7-128x128.jpg" alt="User Avatar" />
+                      <div class="contacts-list-info">
+                        <span class="contacts-list-name">
+                          Sarah Doe
+                          <small class="contacts-list-date float-end"> 2/23/2023 </small>
+                        </span>
+                        <span class="contacts-list-msg"> I will be waiting for... </span>
+                      </div>
+                      <!-- /.contacts-list-info -->
+                    </a>
+                  </li>
+                  <!-- End Contact Item -->
+                  <li>
+                    <a href="#">
+                      <img class="contacts-list-img" src="../../dist/assets/img/user3-128x128.jpg" alt="User Avatar" />
+                      <div class="contacts-list-info">
+                        <span class="contacts-list-name">
+                          Nadia Jolie
+                          <small class="contacts-list-date float-end"> 2/20/2023 </small>
+                        </span>
+                        <span class="contacts-list-msg"> I'll call you back at... </span>
+                      </div>
+                      <!-- /.contacts-list-info -->
+                    </a>
+                  </li>
+                  <!-- End Contact Item -->
+                  <li>
+                    <a href="#">
+                      <img class="contacts-list-img" src="../../dist/assets/img/user5-128x128.jpg" alt="User Avatar" />
+                      <div class="contacts-list-info">
+                        <span class="contacts-list-name">
+                          Nora S. Vans
+                          <small class="contacts-list-date float-end"> 2/10/2023 </small>
+                        </span>
+                        <span class="contacts-list-msg"> Where is your new... </span>
+                      </div>
+                      <!-- /.contacts-list-info -->
+                    </a>
+                  </li>
+                  <!-- End Contact Item -->
+                  <li>
+                    <a href="#">
+                      <img class="contacts-list-img" src="../../dist/assets/img/user6-128x128.jpg" alt="User Avatar" />
+                      <div class="contacts-list-info">
+                        <span class="contacts-list-name">
+                          John K.
+                          <small class="contacts-list-date float-end"> 1/27/2023 </small>
+                        </span>
+                        <span class="contacts-list-msg"> Can I take a look at... </span>
+                      </div>
+                      <!-- /.contacts-list-info -->
+                    </a>
+                  </li>
+                  <!-- End Contact Item -->
+                  <li>
+                    <a href="#">
+                      <img class="contacts-list-img" src="../../dist/assets/img/user8-128x128.jpg" alt="User Avatar" />
+                      <div class="contacts-list-info">
+                        <span class="contacts-list-name">
+                          Kenneth M.
+                          <small class="contacts-list-date float-end"> 1/4/2023 </small>
+                        </span>
+                        <span class="contacts-list-msg"> Never mind I found... </span>
+                      </div>
+                      <!-- /.contacts-list-info -->
+                    </a>
+                  </li>
+                  <!-- End Contact Item -->
+                </ul>
+                <!-- /.contacts-list -->
+              </div>
+              <!-- /.direct-chat-pane -->
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <form action="#" method="post">
+                <div class="input-group">
+                  <input type="text" name="message" placeholder="Type Message ..." class="form-control" />
+                  <span class="input-group-append">
+                    <button type="button" class="btn btn-primary">Send</button>
+                  </span>
+                </div>
+              </form>
+            </div>
+            <!-- /.card-footer-->
+          </div>
+          <!-- /.direct-chat -->
+        </div>
+        <!-- /.Start col -->
+        <!-- Start col -->
+        <div class="col-lg-5 connectedSortable">
+          <div class="card text-white bg-primary bg-gradient border-primary mb-4">
+            <div class="card-header border-0">
+              <h3 class="card-title">Sales Value</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-primary btn-sm" data-lte-toggle="card-collapse">
+                  <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
+                  <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
+                </button>
+              </div>
             </div>
             <div class="card-body">
-              <canvas id="graficoConsumo" height="120"></canvas>
+              <div id="world-map" style="height: 220px"></div>
+            </div>
+            <div class="card-footer border-0">
+              <!--begin::Row-->
+              <div class="row">
+                <div class="col-4 text-center">
+                  <div id="sparkline-1" class="text-dark"></div>
+                  <div class="text-white">Visitors</div>
+                </div>
+                <div class="col-4 text-center">
+                  <div id="sparkline-2" class="text-dark"></div>
+                  <div class="text-white">Online</div>
+                </div>
+                <div class="col-4 text-center">
+                  <div id="sparkline-3" class="text-dark"></div>
+                  <div class="text-white">Sales</div>
+                </div>
+              </div>
+              <!--end::Row-->
             </div>
           </div>
-          <!--begin::Row-->
-          <div class="row">
-            <!-- Start col -->
-            <div class="col-lg-7 connectedSortable">
-              <div class="card mb-4">
-                <div class="card-header">
-                  <h3 class="card-title">Sales Value 1965.</h3>
-                </div>
-
-
-
-
-
-
-
-
-
-
-                <div class="card-body">
-                  <div id="revenue-chart"></div>
-                </div>
-              </div>
-              <!-- /.card -->
-              <!-- DIRECT CHAT -->
-              <div class="card direct-chat direct-chat-primary mb-4">
-                <div class="card-header">
-                  <h3 class="card-title">Direct Chat</h3>
-                  <div class="card-tools">
-                    <span title="3 New Messages" class="badge text-bg-primary"> 3 </span>
-                    <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                      <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                      <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" title="Contacts" data-lte-toggle="chat-pane">
-                      <i class="bi bi-chat-text-fill"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" data-lte-toggle="card-remove">
-                      <i class="bi bi-x-lg"></i>
-                    </button>
-                  </div>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <!-- Conversations are loaded here -->
-                  <div class="direct-chat-messages">
-                    <!-- Message. Default to the start -->
-                    <div class="direct-chat-msg">
-                      <div class="direct-chat-infos clearfix">
-                        <span class="direct-chat-name float-start"> Alexander Pierce </span>
-                        <span class="direct-chat-timestamp float-end"> 23 Jan 2:00 pm </span>
-                      </div>
-                      <!-- /.direct-chat-infos -->
-                      <img class="direct-chat-img" src="../../dist/assets/img/user1-128x128.jpg"
-                        alt="message user image" />
-                      <!-- /.direct-chat-img -->
-                      <div class="direct-chat-text">
-                        Is this template really for free? That's unbelievable!
-                      </div>
-                      <!-- /.direct-chat-text -->
-                    </div>
-                    <!-- /.direct-chat-msg -->
-                    <!-- Message to the end -->
-                    <div class="direct-chat-msg end">
-                      <div class="direct-chat-infos clearfix">
-                        <span class="direct-chat-name float-end"> Sarah Bullock </span>
-                        <span class="direct-chat-timestamp float-start"> 23 Jan 2:05 pm </span>
-                      </div>
-                      <!-- /.direct-chat-infos -->
-                      <img class="direct-chat-img" src="../../dist/assets/img/user3-128x128.jpg"
-                        alt="message user image" />
-                      <!-- /.direct-chat-img -->
-                      <div class="direct-chat-text">You better believe it!</div>
-                      <!-- /.direct-chat-text -->
-                    </div>
-                    <!-- /.direct-chat-msg -->
-                    <!-- Message. Default to the start -->
-                    <div class="direct-chat-msg">
-                      <div class="direct-chat-infos clearfix">
-                        <span class="direct-chat-name float-start"> Alexander Pierce </span>
-                        <span class="direct-chat-timestamp float-end"> 23 Jan 5:37 pm </span>
-                      </div>
-                      <!-- /.direct-chat-infos -->
-                      <img class="direct-chat-img" src="../../dist/assets/img/user1-128x128.jpg"
-                        alt="message user image" />
-                      <!-- /.direct-chat-img -->
-                      <div class="direct-chat-text">
-                        Working with AdminLTE on a great new app! Wanna join?
-                      </div>
-                      <!-- /.direct-chat-text -->
-                    </div>
-                    <!-- /.direct-chat-msg -->
-                    <!-- Message to the end -->
-                    <div class="direct-chat-msg end">
-                      <div class="direct-chat-infos clearfix">
-                        <span class="direct-chat-name float-end"> Sarah Bullock </span>
-                        <span class="direct-chat-timestamp float-start"> 23 Jan 6:10 pm </span>
-                      </div>
-                      <!-- /.direct-chat-infos -->
-                      <img class="direct-chat-img" src="../../dist/assets/img/user3-128x128.jpg"
-                        alt="message user image" />
-                      <!-- /.direct-chat-img -->
-                      <div class="direct-chat-text">I would love to.</div>
-                      <!-- /.direct-chat-text -->
-                    </div>
-                    <!-- /.direct-chat-msg -->
-                  </div>
-                  <!-- /.direct-chat-messages-->
-                  <!-- Contacts are loaded here -->
-                  <div class="direct-chat-contacts">
-                    <ul class="contacts-list">
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="../../dist/assets/img/user1-128x128.jpg"
-                            alt="User Avatar" />
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              Count Dracula
-                              <small class="contacts-list-date float-end"> 2/28/2023 </small>
-                            </span>
-                            <span class="contacts-list-msg"> How have you been? I was... </span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                      <!-- End Contact Item -->
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="../../dist/assets/img/user7-128x128.jpg"
-                            alt="User Avatar" />
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              Sarah Doe
-                              <small class="contacts-list-date float-end"> 2/23/2023 </small>
-                            </span>
-                            <span class="contacts-list-msg"> I will be waiting for... </span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                      <!-- End Contact Item -->
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="../../dist/assets/img/user3-128x128.jpg"
-                            alt="User Avatar" />
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              Nadia Jolie
-                              <small class="contacts-list-date float-end"> 2/20/2023 </small>
-                            </span>
-                            <span class="contacts-list-msg"> I'll call you back at... </span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                      <!-- End Contact Item -->
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="../../dist/assets/img/user5-128x128.jpg"
-                            alt="User Avatar" />
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              Nora S. Vans
-                              <small class="contacts-list-date float-end"> 2/10/2023 </small>
-                            </span>
-                            <span class="contacts-list-msg"> Where is your new... </span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                      <!-- End Contact Item -->
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="../../dist/assets/img/user6-128x128.jpg"
-                            alt="User Avatar" />
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              John K.
-                              <small class="contacts-list-date float-end"> 1/27/2023 </small>
-                            </span>
-                            <span class="contacts-list-msg"> Can I take a look at... </span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                      <!-- End Contact Item -->
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="../../dist/assets/img/user8-128x128.jpg"
-                            alt="User Avatar" />
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              Kenneth M.
-                              <small class="contacts-list-date float-end"> 1/4/2023 </small>
-                            </span>
-                            <span class="contacts-list-msg"> Never mind I found... </span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                      <!-- End Contact Item -->
-                    </ul>
-                    <!-- /.contacts-list -->
-                  </div>
-                  <!-- /.direct-chat-pane -->
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                  <form action="#" method="post">
-                    <div class="input-group">
-                      <input type="text" name="message" placeholder="Type Message ..." class="form-control" />
-                      <span class="input-group-append">
-                        <button type="button" class="btn btn-primary">Send</button>
-                      </span>
-                    </div>
-                  </form>
-                </div>
-                <!-- /.card-footer-->
-              </div>
-              <!-- /.direct-chat -->
-            </div>
-            <!-- /.Start col -->
-            <!-- Start col -->
-            <div class="col-lg-5 connectedSortable">
-              <div class="card text-white bg-primary bg-gradient border-primary mb-4">
-                <div class="card-header border-0">
-                  <h3 class="card-title">Sales Value</h3>
-                  <div class="card-tools">
-                    <button type="button" class="btn btn-primary btn-sm" data-lte-toggle="card-collapse">
-                      <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                      <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div id="world-map" style="height: 220px"></div>
-                </div>
-                <div class="card-footer border-0">
-                  <!--begin::Row-->
-                  <div class="row">
-                    <div class="col-4 text-center">
-                      <div id="sparkline-1" class="text-dark"></div>
-                      <div class="text-white">Visitors</div>
-                    </div>
-                    <div class="col-4 text-center">
-                      <div id="sparkline-2" class="text-dark"></div>
-                      <div class="text-white">Online</div>
-                    </div>
-                    <div class="col-4 text-center">
-                      <div id="sparkline-3" class="text-dark"></div>
-                      <div class="text-white">Sales</div>
-                    </div>
-                  </div>
-                  <!--end::Row-->
-                </div>
-              </div>
-            </div>
-            <!-- /.Start col -->
-          </div>
-          <!-- /.row (main row) -->
         </div>
-        <!--end::Container-->
+        <!-- /.Start col -->
       </div>
-      <!--end::App Content-->
-    </main>
-    <!--end::App Main-->
-    <!--begin::Footer-->
-    <footer class="app-footer">
-      <!--begin::To the end-->
-      <div class="float-end d-none d-sm-inline">Anything you want</div>
-      <!--end::To the end-->
-      <!--begin::Copyright-->
-      <strong>
-        Copyright &copy; 2014-2024&nbsp;
-        <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
-      </strong>
-      All rights reserved.
-      <!--end::Copyright-->
-    </footer>
-    <!--end::Footer-->
+      <!-- /.row (main row) -->
+  </div>
+  <!--end::Container-->
+  </div>
+  <!--end::App Content-->
+  </main>
+  <!--end::App Main-->
+  <!--begin::Footer-->
+  <footer class="app-footer">
+    <!--begin::To the end-->
+    <div class="float-end d-none d-sm-inline">Anything you want</div>
+    <!--end::To the end-->
+    <!--begin::Copyright-->
+    <strong>
+      Copyright &copy; 2014-2024&nbsp;
+      <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
+    </strong>
+    All rights reserved.
+    <!--end::Copyright-->
+  </footer>
+  <!--end::Footer-->
   </div>
   <!--end::App Wrapper-->
   <!--begin::Script-->
@@ -1307,60 +1359,83 @@
     const sparkline3 = new ApexCharts(document.querySelector('#sparkline-3'), option_sparkline3);
     sparkline3.render();
   </script>
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- SCRIPT: Gráfico de barras -->
+  <!-- Chart.js y script -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    const ctx = document.getElementById("graficoConsumo").getContext("2d");
-    new Chart(ctx, {
+    const ctx = document.getElementById('graficoDashboard').getContext('2d');
+
+    const datosPorAno = {};
+    const anioActual = new Date().getFullYear();
+    for (let anio = 1965; anio <= anioActual; anio++) {
+      datosPorAno[anio] = {
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
+        datasets: [
+          {
+            label: 'Energía Solar',
+            data: generarDatosRandom(),
+            backgroundColor: '#f39c12'
+          },
+          {
+            label: 'Energía Eólica',
+            data: generarDatosRandom(),
+            backgroundColor: '#00c0ef'
+          },
+          {
+            label: 'Energía Hidroeléctrica',
+            data: generarDatosRandom(),
+            backgroundColor: '#0073b7'
+          },
+          {
+            label: 'Energía Geotérmica',
+            data: generarDatosRandom(),
+            backgroundColor: '#ff851b'
+          }
+        ]
+      };
+    }
+
+    function generarDatosRandom() {
+      return Array.from({ length: 7 }, () => Math.floor(Math.random() * 90) + 10);
+    }
+
+    const selectorAno = document.getElementById('yearSelector');
+    for (let y = anioActual; y >= 1965; y--) {
+      const option = document.createElement('option');
+      option.value = y;
+      option.text = y;
+      selectorAno.appendChild(option);
+    }
+
+    let chart = new Chart(ctx, {
       type: 'bar',
-      data: {
-        labels: ['2018', '2019', '2020', '2021', '2022'],
-        datasets: [{
-          label: 'Energía renovable (millones de kWh)',
-          data: [3800, 4100, 4600, 5000, 5300],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.7)',
-            'rgba(54, 162, 235, 0.7)',
-            'rgba(255, 206, 86, 0.7)',
-            'rgba(75, 192, 192, 0.7)',
-            'rgba(153, 102, 255, 0.7)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
+      data: datosPorAno[anioActual],
       options: {
         responsive: true,
+        plugins: {
+          title: { display: false },
+          legend: { position: 'top' }
+        },
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
         scales: {
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: 'kWh'
-            }
-          },
-          x: {
-            title: {
-              display: true,
-              text: 'Año'
-            }
-          }
+          x: { stacked: true },
+          y: { stacked: true, beginAtZero: true }
         }
       }
     });
+
+    function actualizarGraficoPorAno() {
+      const anioSeleccionado = selectorAno.value;
+      chart.data = datosPorAno[anioSeleccionado];
+      chart.update();
+    }
   </script>
 
 
 
-  <!--end::Script-->
 </body>
 <!--end::Body-->
 

@@ -1,67 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <title>Gráficos - Renovía</title>
-  <link rel="icon" type="image/x-icon" href="img/logo1.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- AdminLTE CSS (usa Bootstrap internamente) -->
+  <!-- AdminLTE -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+  <!-- FontAwesome (opcional para íconos) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
 
-  <!-- Librería Chart.js para gráficos -->
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini">
 
-  <!-- ==========================================
-     CONTENEDOR GENERAL DE ADMINLTE
-     ========================================== -->
   <div class="wrapper">
 
-    <!-- ==========================================
-       NAVBAR SUPERIOR — Barra de navegación
-       ========================================== -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-      <ul class="navbar-nav">
-        <!-- Enlace para volver al index.html -->
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">
-            ← Volver al inicio
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- ==========================================
-       CONTENIDO PRINCIPAL
-       ========================================== -->
+    <!-- Contenido principal -->
     <div class="content-wrapper">
 
-      <!-- Encabezado del contenido -->
+      <!-- Encabezado -->
       <section class="content-header">
         <div class="container-fluid">
           <h1 class="text-center">Gráfico de Consumo de Energía Renovable</h1>
         </div>
       </section>
 
-      <!-- Sección donde se encuentra el gráfico -->
+      <!-- Contenido -->
       <section class="content">
-
         <div class="container-fluid">
 
-          <!-- CARD (componente visual de AdminLTE) -->
+          <!-- CARD: gráfico animado -->
           <div class="card card-success">
             <div class="card-header">
-              <h3 class="card-title">Consumo histórico por año (kWh)</h3>
+              <h3 class="card-title">Consumo histórico por mes (kWh)</h3>
             </div>
-
-            <!-- Gráfico canvas -->
             <div class="card-body">
-              <canvas id="graficoConsumo" style="height: 300px;"></canvas>
+              <canvas id="graficoConsumo" height="120"></canvas>
             </div>
           </div>
 
@@ -69,129 +46,70 @@
       </section>
     </div>
 
-    <!-- SEGUNDO GRÁFICO: Distribución por tipo de energía -->
-    <div class="card card-info">
-      <div class="card-header">
-        <h3 class="card-title">Distribución por tipo de energía (2022)</h3>
-      </div>
-      <div class="card-body">
-        <canvas id="graficoDistribucion" style="height: 300px;"></canvas>
-      </div>
-    </div>
-
-    <!-- ==========================================
-       PIE DE PÁGINA
-       ========================================== -->
-    <footer class="main-footer text-center">
-      <strong>© 2024 Renovía</strong> - Plataforma educativa de energías limpias.
-    </footer>
-
   </div>
 
-  <!-- ==========================================
-     SCRIPTS DE FUNCIONALIDAD (jQuery, Bootstrap, AdminLTE)
-     ========================================== -->
-  <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/plugins/jquery/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
-
-  <!-- ==========================================
-     SCRIPT DE CHART.JS — Configuración del gráfico
-     ========================================== -->
+  <!-- Script: Configuración del gráfico -->
   <script>
-   
-    // Primer gráfico: Barras con colores personalizados
-const ctx = document.getElementById("graficoConsumo").getContext("2d");
+    let delayed;
 
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['2018', '2019', '2020', '2021', '2022'],
-    datasets: [{
-      label: 'Energía renovable (millones de kWh)',
-      data: [3800, 4100, 4600, 5000, 5300],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.7)',   // Rojo
-        'rgba(54, 162, 235, 0.7)',   // Azul
-        'rgba(255, 206, 86, 0.7)',   // Amarillo
-        'rgba(75, 192, 192, 0.7)',   // Verde agua
-        'rgba(153, 102, 255, 0.7)'   // Morado
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)'
-      ],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    responsive: true,
-    scales: {
-      y: {
-        beginAtZero: true,
-        title: {
-          display: true,
-          text: 'kWh'
+    const labels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'];
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: [40, 60, 75, 50, 90, 80, 70],
+          backgroundColor: 'rgba(255, 99, 132, 0.7)',
+        },
+        {
+          label: 'Dataset 2',
+          data: [20, 40, 50, 30, 60, 50, 40],
+          backgroundColor: 'rgba(54, 162, 235, 0.7)',
+        },
+        {
+          label: 'Dataset 3',
+          data: [30, 20, 40, 25, 70, 60, 30],
+          backgroundColor: 'rgba(75, 192, 192, 0.7)',
         }
-      },
-      x: {
-        title: {
-          display: true,
-          text: 'Año'
-        }
-      }
-    }
-  }
-});
+      ]
+    };
 
-
-    // Segundo gráfico: Pie (distribución por tipo de energía)
-const ctx2 = document.getElementById("graficoDistribucion").getContext("2d");
-
-new Chart(ctx2, {
-  type: 'pie',
-  data: {
-    labels: ['Solar', 'Eólica', 'Hidroeléctrica', 'Geotérmica'],
-    datasets: [{
-      label: 'Distribución %',
-      data: [35, 25, 30, 10], // Datos de ejemplo
-      backgroundColor: [
-        'rgba(255, 206, 86, 0.7)',   // Amarillo (Solar)
-        'rgba(54, 162, 235, 0.7)',   // Azul (Eólica)
-        'rgba(75, 192, 192, 0.7)',   // Verde agua (Hidro)
-        'rgba(153, 102, 255, 0.7)'   // Violeta (Geotérmica)
-      ],
-      borderColor: [
-        'rgba(255, 206, 86, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)'
-      ],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'bottom'
-      },
-      tooltip: {
-        callbacks: {
-          label: function (context) {
-            return context.label + ': ' + context.parsed + '%';
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {
+        animation: {
+          onComplete: () => {
+            delayed = true;
+          },
+          delay: (context) => {
+            let delay = 0;
+            if (context.type === 'data' && context.mode === 'default' && !delayed) {
+              delay = context.dataIndex * 300 + context.datasetIndex * 100;
+            }
+            return delay;
+          },
+        },
+        responsive: true,
+        scales: {
+          x: {
+            stacked: true,
+          },
+          y: {
+            stacked: true,
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'kWh'
+            }
           }
         }
-      }
-    }
-  }
-});
+      },
+    };
 
+    const ctx = document.getElementById("graficoConsumo").getContext("2d");
+    new Chart(ctx, config);
   </script>
 
 </body>
-
 </html>
