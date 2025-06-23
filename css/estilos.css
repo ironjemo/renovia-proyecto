@@ -1,27 +1,112 @@
-/* color sobre var #acd76c */
 body {
+    font-family: 'Nunito', sans-serif;
     background-color: #fffef5;
+    color: #207a26;
 }
 
+/* Barra de Navegación */
 .navbar {
     background-color: #38f01742;
 }
 
-.navbar-brand,
-.nav-link,
-.footer-text {
-    color: #207a26 !important;
+.navbar-brand {
+    font-weight: bold;
+    color: #f1f1a1 !important;
+    font-size: 1.6rem;
 }
 
-.hero-title {
-    color: #009688;
-    font-weight: bold;
+.navbar-nav .nav-link {
+    color: #207a26;
+    font-weight: 500;
+    margin-left: 15px;
 }
-.lead{
-    text-align: justify;
+
+.nav-link.active {
+    color: white !important;
+    text-decoration: underline;
 }
+
+/* Formulario Contactos */
+.form-control {
+    border: 2px solid #2e8837;
+    border-radius: 8px;
+}
+
+/* Fin Formulario Contactos */
+.btn-success {
+    background-color: #2e8837;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+}
+
+.btn-success:hover {
+    background-color: #256e2c;
+}
+
+/* Estilo Cards */
+.card {
+    height: 100%;
+    max-width: 240px;
+    margin: auto;
+    font-size: 0.9rem;
+}
+
+.card-body {
+    padding: 0.75rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilo base para las cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.card:hover {
+    transform: scale(1.05);
+    /* Agranda la card */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    /* Sombra más marcada */
+    background-color: #f0fdf4;
+    /* Fondo suave tipo verde claro */
+}
+/* Fin Estilo Cards */
+
+/* Transición Energética Justa y Seccion Noticias */
+.fondo-verde-suave {
+    background-color: #f0fdf4;
+}
+
+.col-md-4 .btn {
+    transition: all 0.3s ease;
+}
+
+.col-md-4 .btn:hover {
+    transform: scale(1.05);
+}
+/* Fin Transición Energética Justa y Seccion Noticias */
+
+/* Sección Explora y Calcula */
+.fondo-azul-suave {
+    background-color: #e7f5ff;
+}
+/* Fin Sección Explora y Calcula */
 
 footer {
+    margin-top: 50px;
+    text-align: center;
     color: #207a26;
-
+    font-size: 0.9rem;
+    background-color: #38f01742;
 }
