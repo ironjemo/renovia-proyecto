@@ -303,24 +303,66 @@
   </div>
 
 
-  <!-- GRÁFICO 1: Barras de consumo histórico actualizado -->
-
-  <!-- CARD del gráfico con selector de año ajustado -->
-  <div class="card card-success">
-    <div class="card-header d-flex justify-content-between align-items-center flex-wrap">
-      <h3 class="card-title mb-0">Consumo histórico por mes (kWh)</h3>
-      <div class="d-flex align-items-center ms-auto">
-        <label for="yearSelector" class="mb-0 me-2 fw-semibold">Año</label>
-        <select id="yearSelector" class="form-control form-control-sm" onchange="actualizarGraficoPorAno()"
-          style="min-width: 100px;">
-          <!-- Opciones serán cargadas dinámicamente -->
-        </select>
+ <!-- Fila 1: Gráfico de barras + gráfico de dona -->
+<div class="row align-items-stretch">
+  <!-- Gráfico de barras histórico -->
+  <div class="col-md-6">
+    <div class="card card-success h-100">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h3 class="card-title">Consumo histórico por mes (kWh)</h3>
+        <div class="d-flex align-items-center">
+          <label for="yearSelector" class="mb-0 me-2 fw-semibold">Año</label>
+          <select id="yearSelector" class="form-control form-control-sm" onchange="actualizarGraficoPorAno()" style="min-width: 100px;"></select>
+        </div>
+      </div>
+      <div class="card-body d-flex align-items-center justify-content-center">
+        <canvas id="graficoDashboard" style="max-height: 300px; width: 100%;"></canvas>
       </div>
     </div>
-    <div class="card-body">
-      <canvas id="graficoDashboard" height="120"></canvas>
+  </div>
+
+  <!-- Gráfico de energías alternativas (dona) -->
+  <div class="col-md-6">
+    <div class="card card-info h-100">
+      <div class="card-header">
+        <h3 class="card-title">Participación de energías renovables</h3>
+      </div>
+      <div class="card-body d-flex align-items-center justify-content-center">
+        <canvas id="graficoAlternativas" style="max-height: 300px; width: 100%;"></canvas>
+      </div>
     </div>
   </div>
+</div>
+
+<!-- Fila 2: Dispersión + gráfico tipo pie -->
+<div class="row align-items-stretch mt-3">
+  <!-- Gráfico de dispersión -->
+  <div class="col-md-6">
+    <div class="card card-warning h-100">
+      <div class="card-header">
+        <h3 class="card-title">Población vs. Consumo de Energía Primaria</h3>
+      </div>
+      <div class="card-body d-flex align-items-center justify-content-center">
+        <canvas id="graficoDispersión" style="max-height: 300px; width: 100%;"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gráfico tipo pie adicional (puedes usar otros datos reales) -->
+  <div class="col-md-6">
+    <div class="card card-primary h-100">
+      <div class="card-header">
+        <h3 class="card-title">Distribución global de energía por fuente</h3>
+      </div>
+      <div class="card-body d-flex align-items-center justify-content-center">
+        <canvas id="graficoPie" style="max-height: 300px; width: 100%;"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 
   <br>
@@ -365,6 +407,7 @@
       </div>
     </div>
   </div>
+
   <!--end::Row-->
 
   <!--end::App Wrapper-->
@@ -672,6 +715,146 @@
     }
   </script>
 
+  
+<script>
+  const ctxAlt = document.getElementById('graficoAlternativas').getContext('2d');
+
+  const dataAlternativas = {
+    labels: [
+      'Solar',
+      'Eólica',
+      'Hidroeléctrica',
+      'Otras renovables',
+      'Geotérmica'
+    ],
+    datasets: [{
+      label: 'Distribución energética (%)',
+        data: [56.09, 112.36, 477.27, 68.82],  // Valores reales
+      backgroundColor: [
+        '#f39c12',
+        '#00c0ef',
+        '#0073b7',
+        '#28a745',
+        '#ff851b'
+      ]
+    }]
+  };
+
+  const opcionesAlternativas = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'bottom'
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            return `${context.label}: ${context.parsed}%`;
+          }
+        }
+      }
+    }
+  };
+
+  const graficoAlternativas = new Chart(ctxAlt, {
+    type: 'doughnut', // también puedes usar 'pie'
+    data: dataAlternativas,
+    options: opcionesAlternativas
+  });
+</script>
+<script>
+  const dataDispersión = {
+    datasets: [{
+      label: 'Relación población vs. consumo energético',
+      data: [
+        {x: 1422584878, y: 47427.562, label: 'China'},
+        {x: 211140678, y: 3853.715, label: 'Brazil'},
+        {x: 1438069540, y: 10837.855, label: 'India'},
+        {x: 145440454, y: 8691.994, label: 'Russia'},
+        {x: 68682907, y: 1930.593, label: 'United Kingdom'},
+        {x: 124370893, y: 4834.374, label: 'Japan'},
+        {x: 343477286, y: 26189.199, label: 'United States'}
+      ],
+      backgroundColor: [
+        '#f39c12', '#00c0ef', '#0073b7', '#28a745', '#ff851b', '#3c8dbc', '#d81b60'
+      ],
+      pointRadius: 6,
+      pointHoverRadius: 8
+    }]
+  };
+
+  const configDispersión = {
+    type: 'scatter',
+    data: dataDispersión,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const pop = context.raw.x.toLocaleString();
+              const energy = context.raw.y.toLocaleString();
+              return `${context.raw.label}: Población: ${pop}, Energía: ${energy} TWh`;
+            }
+          }
+        },
+        legend: { display: false }
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Población' },
+          ticks: {
+            callback: value => value.toLocaleString()
+          }
+        },
+        y: {
+          title: { display: true, text: 'Consumo Energía Primaria (TWh)' },
+          ticks: {
+            callback: value => value.toLocaleString()
+          }
+        }
+      }
+    }
+  };
+
+  new Chart(document.getElementById('graficoDispersión'), configDispersión);
+</script>
+
+<script>
+  const ctxPie = document.getElementById('graficoPie').getContext('2d');
+
+  const dataPie = {
+    labels: ['Carbón', 'Petróleo', 'Gas', 'Renovables', 'Nuclear'],
+    datasets: [{
+      label: 'Consumo Mundial (%)',
+      data: [27, 33, 24, 11, 5], // Puedes ajustar con datos más precisos
+      backgroundColor: ['#343a40', '#f39c12', '#00c0ef', '#28a745', '#d81b60'],
+    }]
+  };
+
+  const opcionesPie = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'bottom'
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            return `${context.label}: ${context.parsed}%`;
+          }
+        }
+      }
+    }
+  };
+
+  new Chart(ctxPie, {
+    type: 'pie',
+    data: dataPie,
+    options: opcionesPie
+  });
+</script>
 
 
   </body>
