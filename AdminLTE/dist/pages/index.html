@@ -235,93 +235,94 @@
     }
   </style>
 
-  <div class="row">
-    <!-- Solar -->
-    <div class="col-lg-3 col-6">
-      <div class="small-box" style="background-color: #fbc02d;">
-        <div class="inner">
-          <h3>8,540</h3>
-          <p>Producción Solar (MWh)</p>
-        </div>
-        <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 4a1 1 0 011-1h0a1 1 0 110 2h0a1 1 0 01-1-1z..."></path>
-        </svg>
-        <a href="https://www.energysage.com/solar/" target="_blank" class="small-box-footer">
-          Más información <i class="bi bi-link-45deg"></i>
-        </a>
+ <div class="row">
+  <!-- Solar -->
+  <div class="col-lg-3 col-6">
+    <div class="small-box" style="background-color: #fbc02d;">
+      <div class="inner">
+        <h3 id="solarValue">0</h3>
+        <p>Producción Solar (GWh)</p>
       </div>
-    </div>
-
-    <!-- Eólica -->
-    <div class="col-lg-3 col-6">
-      <div class="small-box" style="background-color: #00bcd4;">
-        <div class="inner">
-          <h3>1.82</h3>
-          <p>Producción Eólica (MWh)</p>
-        </div>
-        <svg class="small-box-icon" viewBox="0 0 24 24" fill="white">
-          <path d="M12 2l.7 3.5L17 7l-4 1 1.5 4-2.5-3-2.5 3L11 8 7 7l4.3-1.5L12 2zM11 13h2v9h-2v-9z" />
-        </svg>
-        <a href="https://www.energysage.com/about-clean-energy/wind/" target="_blank" class="small-box-footer">
-          Más información <i class="bi bi-link-45deg"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- Hidroeléctrica -->
-    <div class="col-lg-3 col-6">
-      <div class="small-box" style="background-color: #1976d2;">
-        <div class="inner">
-          <h3>2.64</h3>
-          <p>Producción Hidroeléctrica (MWh)</p>
-        </div>
-        <svg class="small-box-icon" fill="white" viewBox="0 0 24 24">
-          <path d="M4 3h16v2H4V3zm1 3h14v2H5V6zm1 3h12v1H6V9zm2 2h8v1H8v-1zm2 2h4v1h-4v-1z..."></path>
-        </svg>
-        <a href="https://www.iea.org/reports/hydropower" target="_blank" class="small-box-footer">
-          Más información <i class="bi bi-link-45deg"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- Geotérmica -->
-    <div class="col-lg-3 col-6">
-      <div class="small-box" style="background-color: #fb8c00;">
-        <div class="inner">
-          <h3>0.92</h3>
-          <p>Producción Geotérmica (MWh)</p>
-        </div>
-        <svg class="small-box-icon" fill="white" viewBox="0 0 24 24">
-          <path d="M8 2a1 1 0 011-1h6a1 1 0 010 2h-1v2h2a1 1 0 010 2h-2v2h-2V7H9a1 1 0 010-2h2V3H9a1 1 0 01-1-1z...">
-          </path>
-        </svg>
-        <a href="https://www.energy.gov/topics/geothermal-energy" target="_blank" class="small-box-footer">
-          Más información <i class="bi bi-link-45deg"></i>
-        </a>
-      </div>
+      <svg class="small-box-icon" fill="currentColor">...</svg>
+      <a href="https://www.energysage.com/solar/" target="_blank" class="small-box-footer">
+        Más información <i class="bi bi-link-45deg"></i>
+      </a>
     </div>
   </div>
 
+  <!-- Eólica -->
+  <div class="col-lg-3 col-6">
+    <div class="small-box" style="background-color: #00bcd4;">
+      <div class="inner">
+        <h3 id="eolicaValue">0</h3>
+        <p>Producción Eólica (GWh)</p>
+      </div>
+      <svg class="small-box-icon">...</svg>
+      <a href="https://www.energysage.com/about-clean-energy/wind/" target="_blank" class="small-box-footer">
+        Más información <i class="bi bi-link-45deg"></i>
+      </a>
+    </div>
+  </div>
 
- <!-- Fila 1: Gráfico de barras + gráfico de dona -->
-<div class="row align-items-stretch">
-  <!-- Gráfico de barras histórico -->
+  <!-- Hidroeléctrica -->
+  <div class="col-lg-3 col-6">
+    <div class="small-box" style="background-color: #1976d2;">
+      <div class="inner">
+        <h3 id="hidroValue">0</h3>
+        <p>Producción Hidroeléctrica (GWh)</p>
+      </div>
+      <svg class="small-box-icon">...</svg>
+      <a href="https://www.iea.org/reports/hydropower" target="_blank" class="small-box-footer">
+        Más información <i class="bi bi-link-45deg"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Geotérmica -->
+  <div class="col-lg-3 col-6">
+    <div class="small-box" style="background-color: #fb8c00;">
+      <div class="inner">
+        <h3 id="geoValue">0</h3>
+        <p>Producción Geotérmica (GWh)</p>
+      </div>
+      <svg class="small-box-icon">...</svg>
+      <a href="https://www.energy.gov/topics/geothermal-energy" target="_blank" class="small-box-footer">
+        Más información <i class="bi bi-link-45deg"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Fila 1: Gráficos de barras apiladas -->
+<div class="row align-items-stretch mb-3">
+  <!-- Sudamérica -->
   <div class="col-md-6">
     <div class="card card-success h-100">
       <div class="card-header d-flex justify-content-between align-items-center">
-        <h3 class="card-title">Consumo histórico por mes (kWh)</h3>
-        <div class="d-flex align-items-center">
-          <label for="yearSelector" class="mb-0 me-2 fw-semibold">Año</label>
-          <select id="yearSelector" class="form-control form-control-sm" onchange="actualizarGraficoPorAno()" style="min-width: 100px;"></select>
-        </div>
+        <h3 class="card-title">Energías limpias por país (2013–2023)</h3>
       </div>
-      <div class="card-body d-flex align-items-center justify-content-center">
-        <canvas id="graficoDashboard" style="max-height: 300px; width: 100%;"></canvas>
+      <div class="card-body">
+        <canvas id="graficoStackedEnergias" style="max-height: 400px; width: 100%;"></canvas>
       </div>
     </div>
   </div>
 
-  <!-- Gráfico de energías alternativas (dona) -->
+  <!-- Europa -->
+  <div class="col-md-6">
+    <div class="card card-primary h-100">
+      <div class="card-header">
+        <h3 class="card-title">Consumo de Energías Renovables en Europa (2013–2023)</h3>
+      </div>
+      <div class="card-body">
+        <canvas id="graficoEuropa" style="max-height: 400px; width: 100%;"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fila 2: Dona + Pie -->
+<div class="row align-items-stretch mb-3">
+  <!-- Dona energías alternativas -->
   <div class="col-md-6">
     <div class="card card-info h-100">
       <div class="card-header">
@@ -332,11 +333,57 @@
       </div>
     </div>
   </div>
+
+  <!-- Pie Sudamérica -->
+  <div class="col-md-6">
+    <div class="card card-success h-100">
+      <div class="card-header">
+        <h3 class="card-title">Consumo renovable acumulado 2012–2023 (Sudamérica)</h3>
+      </div>
+      <div class="card-body d-flex align-items-center justify-content-center">
+        <canvas id="graficoRenovables" style="max-height: 300px; width: 100%;"></canvas>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- Fila 2: Dispersión + gráfico tipo pie -->
-<div class="row align-items-stretch mt-3">
-  <!-- Gráfico de dispersión -->
+<!-- Fila 3: Mapa + Dispersión -->
+<div class="row align-items-stretch mb-3">
+  <!-- Mapa mundial -->
+  <div class="col-md-6">
+    <div class="card text-white bg-primary bg-gradient border-primary h-100">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h3 class="card-title">Sales Value</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-primary btn-sm" data-lte-toggle="card-collapse">
+            <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
+            <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div id="world-map" style="width: 100%; height: 380px;"></div>
+      </div>
+      <div class="card-footer border-0">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <div id="sparkline-1" class="text-dark"></div>
+            <div class="text-white">Visitors</div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div id="sparkline-2" class="text-dark"></div>
+            <div class="text-white">Online</div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div id="sparkline-3" class="text-dark"></div>
+            <div class="text-white">Sales</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dispersión -->
   <div class="col-md-6">
     <div class="card card-warning h-100">
       <div class="card-header">
@@ -347,68 +394,8 @@
       </div>
     </div>
   </div>
-
-  <!-- Gráfico tipo pie adicional (puedes usar otros datos reales) -->
-  <div class="col-md-6">
-    <div class="card card-primary h-100">
-      <div class="card-header">
-        <h3 class="card-title">Distribución global de energía por fuente</h3>
-      </div>
-      <div class="card-body d-flex align-items-center justify-content-center">
-        <canvas id="graficoPie" style="max-height: 300px; width: 100%;"></canvas>
-      </div>
-    </div>
-  </div>
 </div>
 
-
-
-
-
-  <br>
-
-
-  <!--begin::Row contenedor paises-->
-  <div class="row">
-    <!-- Card con 11 columnas centrado -->
-    <div class="col-lg-11 mx-auto connectedSortable">
-      <div class="card text-white bg-primary bg-gradient border-primary mb-4">
-        <div class="card-header border-0 d-flex justify-content-between align-items-center">
-          <h3 class="card-title">Sales Value</h3>
-          <div class="card-tools">
-            <button type="button" class="btn btn-primary btn-sm" data-lte-toggle="card-collapse">
-              <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-              <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-            </button>
-          </div>
-        </div>
-
-        <div class="card-body">
-          <!-- Mapa con más espacio y centrado -->
-          <div id="world-map" style="width: 100%; height: 380px;"></div>
-        </div>
-
-        <div class="card-footer border-0">
-          <div class="row">
-            <div class="col-md-4 text-center">
-              <div id="sparkline-1" class="text-dark"></div>
-              <div class="text-white">Visitors</div>
-            </div>
-            <div class="col-md-4 text-center">
-              <div id="sparkline-2" class="text-dark"></div>
-              <div class="text-white">Online</div>
-            </div>
-            <div class="col-md-4 text-center">
-              <div id="sparkline-3" class="text-dark"></div>
-              <div class="text-white">Sales</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--end::Row-->
 
   <!--end::App Wrapper-->
   <!--begin::Script-->
@@ -643,78 +630,73 @@
 
   <!-- Chart.js y script -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    const ctx = document.getElementById('graficoDashboard').getContext('2d');
+ <script>
+  const ctx = document.getElementById('graficoStackedEnergias').getContext('2d');
 
-    const datosPorAno = {};
-    const anioActual = new Date().getFullYear();
-    for (let anio = 1965; anio <= anioActual; anio++) {
-      datosPorAno[anio] = {
-        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
-        datasets: [
-          {
-            label: 'Energía Solar',
-            data: generarDatosRandom(),
-            backgroundColor: '#f39c12'
-          },
-          {
-            label: 'Energía Eólica',
-            data: generarDatosRandom(),
-            backgroundColor: '#00c0ef'
-          },
-          {
-            label: 'Energía Hidroeléctrica',
-            data: generarDatosRandom(),
-            backgroundColor: '#0073b7'
-          },
-          {
-            label: 'Energía Geotérmica',
-            data: generarDatosRandom(),
-            backgroundColor: '#ff851b'
-          }
-        ]
-      };
-    }
+  const labels = [
+    'Argentina', 'Brazil', 'Chile', 'Colombia',
+    'Ecuador', 'Peru', 'Venezuela'
+  ];
 
-    function generarDatosRandom() {
-      return Array.from({ length: 7 }, () => Math.floor(Math.random() * 90) + 10);
-    }
+  const dataPorcentaje = {
+    'Solar': [2.59, 2.11, 15.90, 0.38, 0.16, 1.95, 0.00],
+    'Eólica': [14.55, 9.32, 11.20, 0.11, 0.43, 4.19, 0.08],
+    'Hidro': [77.23, 76.21, 52.95, 94.58, 96.94, 91.42, 99.89],
+    'Otras': [5.63, 12.37, 19.95, 4.93, 2.47, 2.44, 0.03]
+  };
 
-    const selectorAno = document.getElementById('yearSelector');
-    for (let y = anioActual; y >= 1965; y--) {
-      const option = document.createElement('option');
-      option.value = y;
-      option.text = y;
-      selectorAno.appendChild(option);
-    }
+  const colors = {
+    'Solar': '#f4a261',
+    'Eólica': '#2a9d8f',
+    'Hidro': '#264653',
+    'Otras': '#e76f51'
+  };
 
-    let chart = new Chart(ctx, {
-      type: 'bar',
-      data: datosPorAno[anioActual],
-      options: {
-        responsive: true,
-        plugins: {
-          title: { display: false },
-          legend: { position: 'top' }
+  const datasets = Object.entries(dataPorcentaje).map(([key, values]) => ({
+    label: key,
+    data: values,
+    backgroundColor: colors[key],
+    stack: 'energias'
+  }));
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: datasets
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top'
         },
-        interaction: {
+        tooltip: {
           mode: 'index',
           intersect: false
+        }
+      },
+      scales: {
+        x: {
+          stacked: true,
+          title: {
+            display: true,
+            text: 'Países'
+          }
         },
-        scales: {
-          x: { stacked: true },
-          y: { stacked: true, beginAtZero: true }
+        y: {
+          stacked: true,
+          title: {
+            display: true,
+            text: 'Porcentaje (%)'
+          },
+          min: 0,
+          max: 100
         }
       }
-    });
-
-    function actualizarGraficoPorAno() {
-      const anioSeleccionado = selectorAno.value;
-      chart.data = datosPorAno[anioSeleccionado];
-      chart.update();
     }
-  </script>
-
+  });
+</script>
   
 <script>
   const ctxAlt = document.getElementById('graficoAlternativas').getContext('2d');
@@ -822,18 +804,18 @@
 </script>
 
 <script>
-  const ctxPie = document.getElementById('graficoPie').getContext('2d');
+  const ctxRenovables = document.getElementById('graficoRenovables').getContext('2d');
 
-  const dataPie = {
-    labels: ['Carbón', 'Petróleo', 'Gas', 'Renovables', 'Nuclear'],
+  const dataRenovables = {
+    labels: ['Brasil', 'Colombia', 'Argentina', 'Chile'],
     datasets: [{
-      label: 'Consumo Mundial (%)',
-      data: [27, 33, 24, 11, 5], // Puedes ajustar con datos más precisos
-      backgroundColor: ['#343a40', '#f39c12', '#00c0ef', '#28a745', '#d81b60'],
+      label: 'Consumo acumulado de energías renovables (TWh)',
+      data: [12621.77, 1250.65, 906.85, 667.19],  // Valores reales del análisis
+      backgroundColor: ['#28a745', '#00c0ef', '#f39c12', '#d81b60'],
     }]
   };
 
-  const opcionesPie = {
+  const opcionesRenovables = {
     responsive: true,
     plugins: {
       legend: {
@@ -842,18 +824,65 @@
       tooltip: {
         callbacks: {
           label: function(context) {
-            return `${context.label}: ${context.parsed}%`;
+            return `${context.label}: ${context.parsed.toFixed(2)} TWh`;
           }
         }
       }
     }
   };
 
-  new Chart(ctxPie, {
+  new Chart(ctxRenovables, {
     type: 'pie',
-    data: dataPie,
-    options: opcionesPie
+    data: dataRenovables,
+    options: opcionesRenovables
   });
+</script>
+
+<script>
+  // Producción acumulada de energía renovable en Sudamérica (2012–2023)
+  const energiaData = {
+    solar: 554.97,
+    eolica: 1737.09,
+    hidro: 19499.07,
+    geo: 2401.95
+  };
+
+  // Insertar valores en las tarjetas
+  document.getElementById("solarValue").textContent = energiaData.solar.toLocaleString('es-CO') + " GWh";
+  document.getElementById("eolicaValue").textContent = energiaData.eolica.toLocaleString('es-CO') + " GWh";
+  document.getElementById("hidroValue").textContent = energiaData.hidro.toLocaleString('es-CO') + " GWh";
+  document.getElementById("geoValue").textContent = energiaData.geo.toLocaleString('es-CO') + " GWh";
+</script>
+<script>
+const paises_eu = ["Denmark", "Finland", "France", "Germany", "Italy", "Netherlands", "Norway", "Poland", "Spain", "Sweden"];
+const solarEU = [35.0, 4.99, 332.63, 1297.52, 712.94, 192.32, 3.62, 71.03, 598.28, 24.09];
+const eolicaEU = [441.6, 178.02, 873.41, 2978.8, 534.98, 377.79, 187.69, 411.69, 1603.17, 604.37];
+const hidroEU = [0.49, 423.6, 1692.9, 570.81, 1305.38, 2.34, 3976.32, 63.45, 848.09, 1955.3];
+const otrasEU = [205.39, 426.69, 289.38, 1756.94, 818.26, 234.21, 9.23, 285.07, 208.17, 415.41];
+
+new Chart(document.getElementById("graficoEuropa"), {
+  type: 'bar',
+  data: {
+    labels: paises_eu,
+    datasets: [
+      { label: "Solar", data: solarEU, backgroundColor: '#f4a261' },
+      { label: "Eólica", data: eolicaEU, backgroundColor: '#2a9d8f' },
+      { label: "Hidro", data: hidroEU, backgroundColor: '#457b9d' },
+      { label: "Otras", data: otrasEU, backgroundColor: '#e76f51' }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'top' } },
+    scales: {
+      x: { stacked: true },
+      y: {
+        stacked: true,
+        title: { display: true, text: 'Consumo Total (TWh)' }
+      }
+    }
+  }
+});
 </script>
 
 
