@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Por favor completa todos los campos.");
             return;
         }
-
-        const numero = "573024104122"; // Reemplaza con tu número de WhatsApp
+        
+        const numero = "573012154640"; // Reemplaza con tu número de WhatsApp
         const texto = `Hola, soy ${encodeURIComponent(nombre)}.%0AMi correo es: ${encodeURIComponent(correo)}.%0AQuiero decir: ${encodeURIComponent(mensaje)}`;
 
         const url = `https://wa.me/${numero}?text=${texto}`;
