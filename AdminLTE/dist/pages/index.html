@@ -82,8 +82,8 @@
     <!-- Izquierda: Botón y logo -->
     <div class="d-flex align-items-center">
 
-      <a class="navbar-brand d-flex align-items-center ms-2" href="/renovia-proyecto/index.html">
-        <img src="/renovia-proyecto/img/logonav.png" alt="Logo Renovía" height="50" class="me-2" />
+      <a class="navbar-brand d-flex align-items-center ms-2" href="/index.html">
+        <img src="/img/logonav.png" alt="Logo Renovía" height="50" class="me-2" />
       </a>
     </div>
 
@@ -91,9 +91,9 @@
 <div class="d-flex align-items-center ms-auto">
 
       <ul class="navbar-nav flex-row align-items-center">
-        <li class="nav-item"><a class="nav-link" href="/renovia-proyecto/index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="/renovia-proyecto/contacto.html">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="/renovia-proyecto/calculadora.html">Calculadora</a></li>
+        <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="/calculadora.html">Calculadora</a></li>
 
 
 
@@ -296,16 +296,19 @@
 <!-- Fila 1: Gráficos de barras apiladas -->
 <div class="row align-items-stretch mb-3">
   <!-- Sudamérica -->
+<!-- Fila 1: Gráfico de barras apiladas -->
+<div class="row">
   <div class="col-md-6">
     <div class="card card-success h-100">
       <div class="card-header d-flex justify-content-between align-items-center">
-        <h3 class="card-title">Energías limpias por país (2013–2023)</h3>
+        <h3 class="card-title mb-0">Consumo de Energías Renovables por País (2013–2023)</h3>
       </div>
       <div class="card-body">
-        <canvas id="graficoStackedEnergias" style="max-height: 400px; width: 100%;"></canvas>
+        <canvas id="graficoBarrasApiladas" height="300"></canvas>
       </div>
     </div>
   </div>
+
 
   <!-- Europa -->
   <div class="col-md-6">
@@ -884,6 +887,55 @@ new Chart(document.getElementById("graficoEuropa"), {
   }
 });
 </script>
+
+<script>
+  const data = {
+    paises: ["Argentina", "Brazil", "Chile", "Colombia", "Ecuador", "Peru", "Venezuela"],
+    solar:   [28.061, 313.697, 188.586, 6.166, 0.952, 17.214, 0.089],
+    eolica:  [157.612, 1387.391, 132.889, 1.866, 2.558, 37.032, 1.602],
+    hidro:   [836.456, 11348.214, 628.012, 1545.994, 572.805, 807.718, 2037.234],
+    otras:   [61.004, 1841.305, 236.604, 80.584, 14.584, 21.523, 0.643]
+  };
+
+  new Chart(document.getElementById("graficoBarrasApiladas"), {
+    type: "bar",
+    data: {
+      labels: data.paises,
+      datasets: [
+        { label: "Solar", data: data.solar, backgroundColor: "#f4a261" },
+        { label: "Eólica", data: data.eolica, backgroundColor: "#2a9d8f" },
+        { label: "Hidroeléctrica", data: data.hidro, backgroundColor: "#457b9d" },
+        { label: "Otras Renovables", data: data.otras, backgroundColor: "#e76f51" }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top' }
+      },
+      interaction: {
+        mode: 'index',
+        intersect: false
+      },
+      scales: {
+        x: {
+          stacked: true,
+          ticks: { maxRotation: 45, minRotation: 45 }
+        },
+        y: {
+          stacked: true,
+          title: {
+            display: true,
+            text: "Consumo total (TWh)"
+          },
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
 
 
   </body>
