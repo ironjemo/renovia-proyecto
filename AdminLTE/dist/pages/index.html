@@ -36,16 +36,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
     integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous" />
 
-
-
-
-
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <!-- Fuente Nunito -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />  
 
   <style>
     body {
@@ -69,6 +65,13 @@
     #sidebar.show {
       display: block;
     }
+    footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #207a26;
+    font-size: 0.9rem;
+    background-color: #38f01742;
+}
   </style>
 
 
@@ -82,80 +85,41 @@
     <!-- Izquierda: Botón y logo -->
     <div class="d-flex align-items-center">
 
-      <a class="navbar-brand d-flex align-items-center ms-2" href="/index.html">
-        <img src="/img/logonav.png" alt="Logo Renovía" height="50" class="me-2" />
+      <a class="navbar-brand d-flex align-items-center ms-2" href="/renovia-proyecto/index.html">
+        <img src="/renovia-proyecto/img/logonav.png" alt="Logo Renovía" height="50" class="me-2" />
       </a>
     </div>
 
     <!-- Derecha: Menú + iconos -->
-    <div class="d-flex align-items-center ms-auto">
+    <nav class="navbar navbar-expand-lg" style="background-color: #bef7be;">
+      <div class="container">
 
-      <ul class="navbar-nav flex-row align-items-center">
-        <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contacto.html">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="/calculadora.html">Calculadora</a></li>
+        <!-- Botón hamburguesa (visible en pantallas pequeñas) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <!-- Menú colapsable (todo lo demás a la derecha) -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="/renovia-proyecto/index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="/renovia-proyectoAdminLTE/index.html">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="/renovia-proyecto/contacto.html">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="/renovia-proyecto/calculadora.html">Calculadora</a></li>
 
-
-        <!-- Chat con avatares -->
-        <!-- Ícono del chat que abre el modal -->
-        <li class="nav-item me-3">
+            <!-- Chat -->
+            <!-- <li class="nav-item me-3">
           <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#chatModal">
             <i class="bi bi-chat-text fs-5"></i>
             <span class="badge text-bg-danger">3</span>
           </a>
-        </li>
+        </li> -->
 
-        <!-- Modal de chat con los integrantes -->
-        <!-- Modal de Chat -->
-        <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header bg-success text-white">
-                <h5 class="modal-title" id="chatModalLabel">Mensajes del equipo</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                  aria-label="Cerrar"></button>
-              </div>
-              <div class="modal-body">
-                <!-- Santiago -->
-                <div class="d-flex align-items-center mb-3">
-                  <img src="/img/avatar_face_man_boy_male_profile_smiley_happy_people_icon_181657.webp" alt="Santiago"
-                    class="rounded-circle me-3" width="50" height="50">
-                  <div>
-                    <strong>Santiago Montoya</strong><br>
-                    <small class="text-muted">Disponible</small>
-                  </div>
-                </div>
-
-                <!-- Harol -->
-                <div class="d-flex align-items-center mb-3">
-                  <img src="/img/avatar_face_man_boy_profile_smiley_happy_people_icon_181659.webp" alt="Harol"
-                    class="rounded-circle me-3" width="50" height="50">
-                  <div>
-                    <strong>Herson García</strong><br>
-                    <small class="text-muted">En una reunión</small>
-                  </div>
-                </div>
-
-                <!-- Jero -->
-                <div class="d-flex align-items-center mb-3">
-                  <img src="/img/pequeno-nino-afroamericano-dibujos-animados_251661-610.avif" alt="Jero"
-                    class="rounded-circle me-3" width="50" height="50">
-                  <div>
-                    <strong>Jero Mejía</strong><br>
-                    <small class="text-muted">Trabajando...</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-        <!-- Notificaciones -->
-        <li class="nav-item dropdown me-3">
-          <a class="nav-link" data-bs-toggle="dropdown" href="#"> <i class="bi bi-bell-fill fs-5"></i>
+            <!-- Notificaciones -->
+            <!-- <li class="nav-item dropdown me-3">
+          <a class="nav-link" data-bs-toggle="dropdown" href="#"> 
+            <i class="bi bi-bell-fill fs-5"></i>
             <span class="badge text-bg-warning">15</span>
           </a>
           <div class="dropdown-menu dropdown-menu-end">
@@ -164,11 +128,12 @@
             <a href="#" class="dropdown-item"><i class="bi bi-people-fill me-2"></i> 8 solicitudes</a>
             <a href="#" class="dropdown-item"><i class="bi bi-file-earmark-fill me-2"></i> 3 reportes</a>
           </div>
-        </li>
+        </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-
-      </ul>
-    </div>
   </div>
 </nav>
 
@@ -186,7 +151,7 @@
     <!--begin::Container-->
     <div class="container-fluid">
       <!--begin::Row-->
-      <div class="row">
+      <!-- <div class="row">
 
         <div class="col-sm-12">
           <ol class="breadcrumb float-sm-end">
@@ -194,7 +159,7 @@
             <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
           </ol>
         </div>
-      </div>
+      </div> -->
       <!--end::Row-->
     </div>
     <!--end::Container-->
@@ -992,7 +957,7 @@
       options: optionsRadarEuropa
     });
   </script>
-  <canvas id="graficoDonaFosilSudamerica" style="max-height: 300px;"></canvas>
+
 
   <script>
     const ctxDonaSud = document.getElementById('graficoDonaFosilSudamerica');
@@ -1032,7 +997,12 @@
       }
     });
   </script>
-  <canvas id="graficoPastelFosilEuropa" style="max-height: 300px;"></canvas>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-3">
+    <p class="mb-0">© 2024 Renovía</p>
+  </footer>
+  <!-- Fin FOOTER -->
 
   <script>
     const ctxPastelEur = document.getElementById('graficoPastelFosilEuropa');

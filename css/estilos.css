@@ -4,6 +4,22 @@ body {
     color: #207a26;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
 /* Barra de Navegación */
 .navbar {
     background-color: #38f01742;
@@ -81,6 +97,7 @@ body {
     background-color: #f0fdf4;
     /* Fondo suave tipo verde claro */
 }
+
 /* Fin Estilo Cards */
 
 /* Transición Energética Justa y Seccion Noticias */
@@ -95,12 +112,14 @@ body {
 .col-md-4 .btn:hover {
     transform: scale(1.05);
 }
+
 /* Fin Transición Energética Justa y Seccion Noticias */
 
 /* Sección Explora y Calcula */
 .fondo-azul-suave {
     background-color: #e7f5ff;
 }
+
 /* Fin Sección Explora y Calcula */
 
 footer {

@@ -27,18 +27,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Dashboard
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="dashboardDropdown">
-                <li><a class="dropdown-item" href="graficos.html">📊 ChartJS</a></li>
-                <li><a class="dropdown-item" href="AdminLTE/index.html">🗂 AdminLTE</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="estadisticas.html">Estadisticas</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="AdminLTE/index.html">Dashboard</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
             <li class="nav-item"><a class="nav-link" href="calculadora.html">Calculadora</a></li>
           </ul>
@@ -52,32 +42,48 @@
           <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
 
-              <!-- Slide 1 -->
-              <div class="carousel-item active text-white" style="background-color: #28a745;">
-                <div class="d-flex flex-column justify-content-center align-items-center h-100 p-3">
+              <!-- Slide 1 - Banner Angosto -->
+              <div class="carousel-item active text-white" style="
+                  background-image: url('img/banner1.jpg');
+                  background-size: cover;
+                  background-position: center;
+                  height: 200px;"> <!-- Alto angosto aquí -->
+                <div class="d-flex flex-column justify-content-center align-items-center h-100 p-3"
+                  style="background-color: rgba(0, 0, 0, 0.4);">
                   <h1 class="hero-title mb-2">Visualizando el Futuro Renovable</h1>
-                  <p class="lead">Esta plataforma permite visualizar datos históricos de consumo y producción de
+                  <p class="lead text-center">Esta plataforma permite visualizar datos históricos de consumo y
+                    producción de
                     energías renovables como <br>solar, eólica, hidroeléctrica y geotérmica desde 1965 hasta 2022.</p>
                 </div>
               </div>
 
-              <!-- Slide 2 -->
-              <div class="carousel-item text-white" style="background-color: #17a2b8;">
-                <div class="d-flex flex-column justify-content-center align-items-center h-100 p-3">
+              <!-- Slide 2 - Banner Angosto -->
+              <div class="carousel-item text-white" style="
+                  background-image: url('img/banner2.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                  height: 200px;"> <!-- Alto angosto aquí -->
+                <div class="d-flex flex-column justify-content-center align-items-center h-100 p-3"
+                  style="background-color: rgba(0, 0, 0, 0.4);">
                   <h1 class="hero-title mb-2">Reducción de Emisiones</h1>
-                  <p class="lead">La energía limpia contribuye a un aire más <br> puro y a mitigar el cambio climático.
+                  <p class="lead text-center">La energía limpia contribuye a un aire más puro <br> y a mitigar el cambio
+                    climático.</p>
+                </div>
+              </div>
+
+              <!-- Slide 3 - Banner Angosto -->
+              <div class="carousel-item text-white" style="
+                  background-image: url('img/banner3.jpg');
+                  background-size: cover;
+                  background-position: center;
+                  height: 200px;"> <!-- Alto angosto aquí -->
+                <div class="d-flex flex-column justify-content-center align-items-center h-100 p-3"
+                  style="background-color: rgba(0, 0, 0, 0.4);">
+                  <h1 class="hero-title mb-2">Un Futuro Sostenible</h1>
+                  <p class="lead text-center">La innovación energética impulsa <br> comunidades resilientes y verdes.
                   </p>
                 </div>
               </div>
-
-              <!-- Slide 3 -->
-              <div class="carousel-item text-white" style="background-color: #955c32;">
-                <div class="d-flex flex-column justify-content-center align-items-center h-100 p-3">
-                  <h1 class="hero-title mb-2">Un Futuro Sostenible</h1>
-                  <p class="lead">La innovación energética impulsa <br> comunidades resilientes y verdes.</p>
-                </div>
-              </div>
-
             </div>
 
             <!-- Controles -->
@@ -105,7 +111,7 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
         <div class="col">
           <div class="card h-100 shadow-sm">
-            <img src="img/energiaSolar.png" class="card-img-top" alt="Energía Solar">
+            <img src="img/carousel2.jpg" class="card-img-top" alt="Energía Solar">
             <div class="card-body">
               <h5 class="card-title">Energía Solar</h5>
               <p class="card-text">Captura la energía del sol a través de paneles fotovoltaicos. <a
@@ -115,7 +121,7 @@
         </div>
         <div class="col">
           <div class="card h-100 shadow-sm">
-            <img src="img/energiaEolica.png" class="card-img-top" alt="Energía Eólica">
+            <img src="img/eolica1.jpg" class="card-img-top" alt="Energía Eólica">
             <div class="card-body">
               <h5 class="card-title">Energía Eólica</h5>
               <p class="card-text">Utiliza el viento para generar electricidad. <a href="eolica.html">Ver
@@ -125,7 +131,7 @@
         </div>
         <div class="col">
           <div class="card h-100 shadow-sm">
-            <img src="img/energiaHidro.png" class="card-img-top" alt="Energía Hidroeléctrica">
+            <img src="img/hidroelectrica.jpg" class="card-img-top" alt="Energía Hidroeléctrica">
             <div class="card-body">
               <h5 class="card-title">Energía Hidroeléctrica</h5>
               <p class="card-text">Aprovecha el movimiento del agua. <a href="hidroelectrica.html">Ver más</a></p>
@@ -134,7 +140,7 @@
         </div>
         <div class="col">
           <div class="card h-100 shadow-sm">
-            <img src="img/energiaGeoterm.png" class="card-img-top" alt="Energía Geotérmica">
+            <img src="img/geotermica.jpg" class="card-img-top" alt="Energía Geotérmica">
             <div class="card-body">
               <h5 class="card-title">Energía Geotérmica</h5>
               <p class="card-text">Emplea el calor interno de la Tierra. <a href="geotermica.html">Ver
